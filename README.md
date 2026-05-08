@@ -31,8 +31,8 @@ full control
 clean structure
 no unnecessary code
 
+downloaded path which is aliosing for imports its a way to simplify and shorten your import paths in javaScript ot typescript
 
-explain guard here when use it 
 guard flow:
 User requests page
         ↓
@@ -42,3 +42,5 @@ Authenticated?
    YES       NO
     ↓         ↓
 Allow      Redirect
+
+installed tailwind
