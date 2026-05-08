@@ -1,6 +1,8 @@
 import { AgGridReact } from "ag-grid-react";
 import type { ColDef } from "ag-grid-community";
 
+import toast from "react-hot-toast";
+
 type Book = {
   id: number;
   title: string;
@@ -48,24 +50,85 @@ function Dashboard() {
         Dashboard
       </h1>
 
+      {/* Stats */}
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+
         <div className="rounded bg-white p-6 shadow">
-          <h2 className="text-lg font-semibold">Total Books</h2>
-          <p className="mt-2 text-3xl font-bold">3</p>
+          <h2 className="text-lg font-semibold">
+            Total Books
+          </h2>
+
+          <p className="mt-2 text-3xl font-bold">
+            3
+          </p>
         </div>
 
         <div className="rounded bg-white p-6 shadow">
-          <h2 className="text-lg font-semibold">Borrowed Books</h2>
-          <p className="mt-2 text-3xl font-bold">1</p>
+          <h2 className="text-lg font-semibold">
+            Borrowed Books
+          </h2>
+
+          <p className="mt-2 text-3xl font-bold">
+            1
+          </p>
         </div>
 
         <div className="rounded bg-white p-6 shadow">
-          <h2 className="text-lg font-semibold">Available Books</h2>
-          <p className="mt-2 text-3xl font-bold">2</p>
+          <h2 className="text-lg font-semibold">
+            Available Books
+          </h2>
+
+          <p className="mt-2 text-3xl font-bold">
+            2
+          </p>
         </div>
+
       </div>
 
+      {/* Toast Buttons */}
+      <div className="mb-6 flex gap-4">
+
+        <button
+          onClick={() =>
+            toast.success(
+              "Book added successfully"
+            )
+          }
+          className="rounded bg-green-600 px-4 py-2 text-white"
+        >
+          Success Toast
+        </button>
+
+        <button
+          onClick={() =>
+            toast.error(
+              "Failed to delete book"
+            )
+          }
+          className="rounded bg-red-600 px-4 py-2 text-white"
+        >
+          Error Toast
+        </button>
+
+        <button
+          onClick={() =>
+            toast(
+              "Warning: Low book stock",
+              {
+                icon: "⚠️",
+              }
+            )
+          }
+          className="rounded bg-yellow-500 px-4 py-2 text-white"
+        >
+          Warning Toast
+        </button>
+
+      </div>
+
+      {/* AG Grid */}
       <div className="rounded bg-white p-6 shadow">
+
         <h2 className="mb-4 text-xl font-semibold">
           Books Table
         </h2>
@@ -78,6 +141,7 @@ function Dashboard() {
             paginationPageSize={5}
           />
         </div>
+
       </div>
     </div>
   );

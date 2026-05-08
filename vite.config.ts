@@ -8,7 +8,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"), 
-      // 👆 change to "frontend/src" if that's where your code lives
     },
   },
 });
