@@ -96,6 +96,9 @@ MainLayout reads those values
 ↓
 Dashboard/Profile/Settings colors update
 
+merged breanches 
+installed toaster and created 3 messages in dashboard
+
 
 
 
@@ -162,3 +165,4 @@ src/
 │
 ├── App.tsx
 └── main.tsx
+
